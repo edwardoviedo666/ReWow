@@ -1,0 +1,4 @@
+MÓDULO COMMONS:
+En este paquete o módulo de tipo artefacto deben implementarse las clases, interfaces, enumeradores, bundles,
+y demás componentes que sean de carácter utilitario y de propósito general, implementadas con el objeto de
+servir como objeto de uso general para las otras capas o componentes del proyecto.

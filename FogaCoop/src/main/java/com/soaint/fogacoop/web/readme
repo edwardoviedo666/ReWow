@@ -1,0 +1,4 @@
+MÓDULO WEB:
+Este paquete o módulo contiene un componente para las APIs de la aplicación, el cual, contiene las
+implementaciones de los controladores de los endpoints, separada en paquetes para cada tipo de API
+de servicios, según sea el caso, REST o SOAP

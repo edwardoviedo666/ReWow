@@ -1,0 +1,3 @@
+MÓDULO ADAPTER:
+En este paquete o módulo de tipo artefacto, deben implementarse las clases para la adaptación de clientes para el
+consumo de endpoints, usando clientes http para la integración de servicios externos provistos por aplicaciones de terceros
