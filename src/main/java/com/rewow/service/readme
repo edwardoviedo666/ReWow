@@ -1,0 +1,5 @@
+MÓDULO SERVICE:
+Este paquete o módulo debe contener las implementaciones que representan las reglas de negocio requeridas
+en la aplicación, modulo o proyecto, esto con el propósito de organizar y separar de otras capas sus
+funcionalidades, facilitar el mantenimiento y la escalabilidad de la aplicación. Para cumplir con esta política,
+es importante manejar estrategias de organización de las funcionalidades en componentes.

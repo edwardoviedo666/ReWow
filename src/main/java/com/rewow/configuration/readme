@@ -1,0 +1,5 @@
+MÓDULO CONFIGURATION (Opcional):
+En este paquete o modulo, se establecen todas las propiedades de configuración para los componentes que requieran
+configuraciones desde clases e interfaces de configuraciones. En algunos casos no pueden aplicarse a ciertas
+plataformas o tecnologías puesto que necesitan de archivos de propiedades o de configuración en otras partes de
+la estructura del proyecto designadas para el escaneo o cargue de las mismas.
