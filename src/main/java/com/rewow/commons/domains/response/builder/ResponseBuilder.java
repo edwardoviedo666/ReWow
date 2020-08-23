@@ -1,7 +1,10 @@
-package com.soaint.fogacoop.commons.domains.response.builder;
+package com.rewow.commons.domains.response.builder;
 
 
-import com.soaint.fogacoop.commons.domains.response.BaseResponse;
+
+import com.rewow.commons.domains.response.BaseResponse;
+import com.rewow.enums.TransactionState;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -14,6 +17,8 @@ public class ResponseBuilder<T> {
     private LocalDateTime timeResponse;
     private String path;
     private String message;
+    private TransactionState state;
+    HttpHeaders responseHeaders = new HttpHeaders();
 
     private ResponseBuilder() {
     }
@@ -22,31 +27,48 @@ public class ResponseBuilder<T> {
         return new ResponseBuilder();
     }
 
-    public ResponseBuilder withResponse(T response) {
+    public ResponseBuilder<T> withResponse(T response) {
         this.response = response;
         this.timeResponse = LocalDateTime.now();
         return this;
     }
 
-    public ResponseBuilder withPath(String path) {
+    public ResponseBuilder<T> withPath(String path) {
         this.path = path;
         this.timeResponse = LocalDateTime.now();
         return this;
     }
 
-    public ResponseBuilder withStatus(HttpStatus status) {
+    public ResponseBuilder<T> withStatus(HttpStatus status) {
         this.httpStatus = status;
         return this;
     }
 
-    public ResponseBuilder withMessage(String message) {
+    public ResponseBuilder<T> withMessage(String message) {
         this.message = message;
         this.timeResponse = LocalDateTime.now();
         return this;
     }
 
-    public ResponseEntity buildResponse() {
-        BaseResponse base = new BaseResponse(this.response, this.httpStatus, this.timeResponse, this.message, this.path);
-        return new ResponseEntity(base, this.httpStatus);
+    public ResponseBuilder<T> withTransactionState(TransactionState state) {
+        this.state = state;
+        this.timeResponse = LocalDateTime.now();
+        return this;
+    }
+
+    public ResponseBuilder<T> withHeader(String key, String value) {
+        this.responseHeaders.set(key, value);
+        this.timeResponse = LocalDateTime.now();
+        return this;
+    }
+
+    public ResponseEntity<BaseResponse<T>> buildResponse() {
+        BaseResponse<T> base = new BaseResponse<>(this.response, this.httpStatus, this.timeResponse, this.message,
+                this.path, this.state);
+        return ResponseEntity
+                .status(this.httpStatus)
+                .headers(this.responseHeaders)
+                .body(base);
+
     }
 }

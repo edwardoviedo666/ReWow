@@ -1,4 +1,4 @@
-package com.soaint.fogacoop.commons.utils.date;
+package com.rewow.commons.utils.date;
 
 import lombok.extern.log4j.Log4j2;
 

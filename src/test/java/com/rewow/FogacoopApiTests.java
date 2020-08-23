@@ -1,4 +1,4 @@
-package com.soaint.fogacoop;
+package com.rewow;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

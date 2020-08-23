@@ -1,5 +1,6 @@
-package com.soaint.fogacoop;
+package com.rewow;
 
+import com.rewow.web.RewowApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
