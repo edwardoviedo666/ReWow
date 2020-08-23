@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Builder
 @ToString
 public class PetDTO {
-    private Integer PetId;
+    private Integer idPet;
     private String ownerName;
     private String petName;
     private Integer age;
